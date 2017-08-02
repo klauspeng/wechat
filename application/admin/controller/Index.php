@@ -1,10 +1,14 @@
 <?php
 namespace app\admin\controller;
 
-class Index
+class Index extends Admin
 {
     public function index()
     {
-        return '111';
+        $this->assign([
+            'title'  => 'ThinkPHP',
+            'email' => 'thinkphp@qq.com'
+        ]);
+        return view();
     }
 }
