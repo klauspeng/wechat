@@ -18,8 +18,7 @@ class Admin extends Controller
             $appId  = cache('appid');
             $secret = cache('secret');
             // 获取token
-            $token = file_get_contents("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential
-                &appid={$appId}&secret={$secret}");
+            $token = file_get_contents("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={$appId}&secret={$secret}");
             $token = json_decode($token, true);
             // 保存
             cache('token', $token['access_token'], $token['expires_in']);
